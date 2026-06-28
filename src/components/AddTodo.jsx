@@ -30,9 +30,6 @@ function AddTodo() {
 			/>
 
 			<button onClick={handleClick}>Add Task</button>
-
-			{/* <ol>{renderTask}</ol>
-			<button onClick={handleUpperCase}>Upper Case All</button> */}
 		</div>
 	);
 }
