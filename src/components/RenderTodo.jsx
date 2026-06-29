@@ -1,52 +1,74 @@
-import { useContext, useState } from "react";
-import { nanoid } from "nanoid";
-import { todoData } from "../contextApi/TodoContext";
+import { useContext } from "react";
+import { todoData } from "../contextApi/todoContext";
 
 function RenderTodo() {
 	let { task, setTask } = useContext(todoData);
 
 	let handleDelete = (id) => {
-		let deleteTodo = task.filter((val) => val.id != id);
-		setTask(deleteTodo);
+		setTask(task.filter((val) => val.id != id));
 	};
 
 	let handleUpperCaseOne = (id) => {
 		setTask(
-			task.map((val) => {
-				if (val.id === id) {
-					return { ...val, isDone: true };
-				} else {
-					return val;
-				}
-			}),
+			task.map((val) => (val.id === id ? { ...val, isDone: true } : val)),
 		);
 	};
 
 	let handleUpperCase = () => {
-		let val = task.map((val) => {
-			return { ...val, isDone: true };
-		});
-		setTask(val);
+		setTask(task.map((val) => ({ ...val, isDone: true })));
 	};
 
-	// todo render
-	let renderTask = task.map((val) => {
+	let renderTask = task.map((val, index) => {
 		return (
-			<li key={val.id}>
-				<span style={val.isDone ? { textDecoration: "line-through" } : {}}>
+			<li
+				key={val.id}
+				className="flex items-center gap-4 px-5 py-4
+    bg-white border border-gray-200 rounded-xl"
+			>
+				<span
+					className={`flex-1 text-lg ${
+						val.isDone ? "line-through text-gray-400" : "text-gray-800"
+					}`}
+				>
 					{val.task}
 				</span>
-				&nbsp; &nbsp;
-				<button onClick={() => handleDelete(val.id)}>delete</button>
-				<button onClick={() => handleUpperCaseOne(val.id)}>Mark as done</button>
+
+				<div className="flex gap-2">
+					<button
+						onClick={() => handleUpperCaseOne(val.id)}
+						disabled={val.isDone}
+						className="text-sm px-4 py-2 rounded-lg border
+        border-green-300 text-green-600
+        hover:bg-green-50 hover:cursor-pointer transition-colors
+        disabled:opacity-30 disabled:cursor-not-allowed"
+					>
+						Mark done
+					</button>
+					<button
+						onClick={() => handleDelete(val.id)}
+						className="text-sm px-4 py-2 rounded-lg border
+        border-red-300 text-red-500 hover:cursor-pointer
+        hover:bg-red-50 transition-colors"
+					>
+						Delete
+					</button>
+				</div>
 			</li>
 		);
 	});
 
 	return (
-		<div>
-			<ol>{renderTask}</ol>
-			<button onClick={handleUpperCase}>Upper Case All</button>
+		<div className="max-w-2xl mx-auto mt-6 px-4">
+			<div className="bg-blue-100 rounded-2xl p-6 border border-blue-200">
+				<ol className="flex flex-col gap-3 mb-5">{renderTask}</ol>
+				<button
+					onClick={handleUpperCase}
+					className="w-full py-3 rounded-xl border border-gray-400
+          text-white text-base font-medium bg-amber-500 hover:cursor-pointer"
+				>
+					Mark all done
+				</button>
+			</div>
 		</div>
 	);
 }

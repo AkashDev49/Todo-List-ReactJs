@@ -19,17 +19,32 @@ function AddTodo() {
 	};
 
 	return (
-		<div>
-			<h1>Todo List</h1>
+		<div className="text-center mt-10 bg-gray-900 max-w-xl mx-auto px-8 py-10 rounded-2xl ">
+			<h1 className="font-serif text-5xl mb-7 text-gray-100 tracking-tight">
+				Todo List
+			</h1>
 
-			<input
-				type="text"
-				placeholder="enter task"
-				onChange={handleChangeTask}
-				value={addTask}
-			/>
+			<div className="flex items-center gap-3">
+				<input
+					type="text"
+					placeholder="Enter task..."
+					onChange={handleChangeTask}
+					value={addTask}
+					className="flex-1 text-lg px-5 py-3.5 rounded-xl
+        bg-gray-800 text-gray-100 placeholder-gray-500
+        border border-gray-700 focus:border-amber-400
+        outline-none transition-colors"
+				/>
 
-			<button onClick={handleClick}>Add Task</button>
+				<button
+					onClick={handleClick}
+					className="text-base font-semibold bg-amber-400 text-gray-900
+        px-6 py-3.5 rounded-xl hover:bg-amber-500
+        transition-colors whitespace-nowrap hover:cursor-pointer"
+				>
+					Add Task
+				</button>
+			</div>
 		</div>
 	);
 }
