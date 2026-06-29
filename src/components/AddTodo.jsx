@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { todoData } from "../contextApi/todoContext";
+import { todoData } from "../contextApi/TodoContext.jsx";
 import { nanoid } from "nanoid";
 
 function AddTodo() {
