@@ -1,16 +1,119 @@
-# React + Vite
+# 📝 React Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive Todo List application built using **React.js**, **JavaScript**, **Tailwind CSS**, **HTML**, and **CSS**. This application helps users efficiently manage their daily tasks with a clean, intuitive, and mobile-friendly interface.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Add new tasks
+- ✏️ Edit existing tasks
+- 🗑️ Delete tasks
+- ✔️ Mark tasks as completed
+- 📱 Fully Responsive Design
+- ⚡ Fast and smooth user experience
+- 🎨 Clean and modern UI using Tailwind CSS
+- ♻️ Dynamic rendering with React Components
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+todo-list/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── index.css
+│   └── assets/
+│
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
+
+## ⚙️ Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/react-todo-list.git
+```
+
+2. Navigate to the project folder
+
+```bash
+cd react-todo-list
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will run on:
+
+```
+http://localhost:5173
+```
+
+## 📸 Preview
+
+> Add screenshots or a GIF of your application here.
+
+Example:
+
+```
+/screenshots/home.png
+```
+
+## 🎯 Learning Outcomes
+
+This project helped in understanding:
+
+- React Components
+- JSX
+- State Management using Hooks
+- Event Handling
+- Conditional Rendering
+- Responsive UI Design
+- Tailwind CSS Utility Classes
+- Component Reusability
+- Modern Frontend Development Practices
+
+## 🔮 Future Improvements
+
+- Local Storage Support
+- Dark Mode
+- Task Categories
+- Due Date & Time
+- Search Tasks
+- Filter (All / Active / Completed)
+- Drag and Drop Task Reordering
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+## 📄 License
+
+This project is created for learning and portfolio purposes.
+
+---
+
+### ⭐ If you like this project, don't forget to give it a star!
