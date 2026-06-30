@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { todoData } from "../contextApi/TodoContext.jsx";
+import { toast } from "react-toastify";
 
 function RenderTodo() {
 	let { task, setTask } = useContext(todoData);
 
 	let handleDelete = (id) => {
 		setTask(task.filter((val) => val.id != id));
+		toast.success("Task deleted");
 	};
 
 	let handleUpperCaseOne = (id) => {

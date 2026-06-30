@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { todoData } from "../contextApi/TodoContext.jsx";
 import { nanoid } from "nanoid";
+import { toast } from "react-toastify";
 
 function AddTodo() {
 	let { task, setTask } = useContext(todoData);
@@ -16,6 +17,7 @@ function AddTodo() {
 		e.preventDefault();
 		setTask([...task, { task: addTask, id: nanoid(), isDone: false }]);
 		setAddTask("");
+		toast.success("Task Added!");
 	};
 
 	return (
